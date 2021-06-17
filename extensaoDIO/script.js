@@ -248,8 +248,8 @@ document.body.addEventListener('click', ()=>{
         if (url !== location.href && isClassPage()) {
             // console.log('url changed');
             watchForPlayerAndInjectSpeedControl();
-            url = location.href;
         }
+        url = location.href;
     })
 }, true);
 
@@ -264,7 +264,7 @@ function watchForPlayerAndInjectSpeedControl() {
     observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
             if (!mutation.addedNodes) return
-            
+
             mutation.addedNodes.forEach(node => {
                 if (typeof(node) === 'object' && node.tagName === 'DIV' && node.classList[0] === 'media-control-layer') {
                     observer.disconnect()
@@ -285,6 +285,7 @@ function watchForPlayerAndInjectSpeedControl() {
 
 let firstAccess = true;
 if (firstAccess) {
+    url = location.href;
     firstAccess = false;
     if (isClassPage()) {
         watchForPlayerAndInjectSpeedControl();
