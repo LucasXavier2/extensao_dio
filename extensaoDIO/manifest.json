@@ -1,0 +1,15 @@
+{
+  "name": "DIO Ultimate 2000",
+  "description": "Opção de aumentar a velocidade de todos os vídeos e melhorias visuais",
+  "version": "1.0",
+  "manifest_version": 2,
+  "content_security_policy": "object-src 'self'; script-src 'self' 'sha256-pyH2PScIkqdNKkTHBfSc/dJ4CQHDbrh5RmhfQRbBI1I='",
+  "content_scripts": [
+    {
+        "matches": [
+          "*://web.digitalinnovation.one/*"
+        ],
+        "js": ["script.js"]
+    }
+  ]
+}
